@@ -1,18 +1,21 @@
 {
-	"blacklist": [
-		"_associatedLearning.*",
-		"displayTitle",
-		"large",
-		"medium",
-		"mp4",
-		"ogv",
-		"poster",
-		"small",
-		"src",
-		"transcriptLink",
-		"source",
-		"type",
-		"_playerOptions.*"
-	],
-	"whitelist": []
+  "blacklist": [
+    "_associatedLearning.*",
+    "displayTitle",
+    "large",
+    "medium",
+    "mp4",
+    "alt",
+    "ogv",
+    "poster",
+    "strapline",
+    "small",
+    "src",
+    "id",
+    "transcriptLink",
+    "source",
+    "type",
+    "_playerOptions.*"
+  ],
+  "whitelist": []
 }
