@@ -1,19 +1,25 @@
 {
   "name": "koadapt2html",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Convert Adapt JSON to HTML",
-  "main": "koadapt2html.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "koadapt2html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kingsonline/koadapt2html.git"
   },
   "author": "Simon Date",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/kingsonline/koadapt2html/issues"
+  },
+  "dependencies": {
+    "async": "^2.1.2",
+    "mu2": "^0.5.21",
+    "node-json2html": "^1.1.1",
+    "underscore": "^1.8.3"
+  },
+  "bin": {
+    "adapt2html": "./bin/koadapt2html"
   },
   "homepage": "https://github.com/kingsonline/koadapt2html#readme"
 }

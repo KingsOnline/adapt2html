@@ -11,7 +11,7 @@ function main(cwd, callback) {
 	var htmlBody;
 	var transform = { tag: "div", class: "element" };
 
-	console.log("Running adapt2html...");
+	console.log("Running koadapt2html...");
 
 	fs.readdir(cwd, function(err, files) {
 		err ? callback(err) : async.each(files, processFile, callback);
@@ -101,7 +101,7 @@ function main(cwd, callback) {
 
 	function writeHTML(done) {
 		var template = "";
-		var dir = path.join(cwd, "adapt2html");
+		var dir = path.join(cwd, "koadapt2html");
 		var filename = htmlTitle + ".html";
 
 		mu.compileAndRender(path.resolve(__dirname, "template.html"), {
