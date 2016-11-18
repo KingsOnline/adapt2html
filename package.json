@@ -1,25 +1,19 @@
 {
-  "name": "adapt2html",
-  "version": "0.2.2",
+  "name": "koadapt2html",
+  "version": "1.0.1",
   "description": "Convert Adapt JSON to HTML",
-  "main": "adapt2html",
+  "main": "koadapt2html.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cgkineo/adapt2html.git"
+    "url": "git+https://github.com/kingsonline/koadapt2html.git"
   },
-  "author": "Tom Greenfield",
-  "license": "GPL-3.0",
+  "author": "Simon Date",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cgkineo/adapt2html/issues"
+    "url": "https://github.com/kingsonline/koadapt2html/issues"
   },
-  "homepage": "https://github.com/cgkineo/adapt2html#readme",
-  "dependencies": {
-    "async": "^2.1.2",
-    "mu2": "^0.5.21",
-    "node-json2html": "^1.1.1",
-    "underscore": "^1.8.3"
-  },
-  "bin": {
-    "adapt2html": "./bin/adapt2html"
-  }
+  "homepage": "https://github.com/kingsonline/koadapt2html#readme"
 }

@@ -1,4 +1,4 @@
-# adapt2html
+# koadapt2html
 
 Convert Adapt JSON to HTML.
 
@@ -8,7 +8,7 @@ Note: requires [Node.js](http://nodejs.org) to be installed.
 
 From the command line, run:
 ```
-npm install -g adapt2html
+npm install -g koadapt2html
 ```
 
 ## Usage
@@ -17,9 +17,9 @@ npm install -g adapt2html
 
 * Run this command inside a directory containing JSON files:
 ```
-adapt2html
+koadapt2html
 ```
-* HTML files will be created in an `adapt2html` subdirectory.
+* HTML files will be created in an `koadapt2html` subdirectory.
 * Each HTML file may be opened in Word with headings formatted appropriately.
 
 ### Rules
