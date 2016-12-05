@@ -44,13 +44,14 @@ function main(cwd, callback) {
 	}
 
 	function convertToHTML(element) {
-		var displayTitle = element.displayTitle ? "${displayTitle}" : "&lt;empty&gt;";
-
-		transform.children = [
-			{ tag: "h2", class: "border-title", html: "${_id} ${_component} ${_type}" },
-			{ tag: "span", class: "attr", html: "displayTitle" },
-			{ tag: "h3", class: "display-title", html: displayTitle }
-		];
+			{ tag: "h2", class: "border-title", html: "${_component}" },
+		var displayTitle = element.displayTitle ? "${displayTitle}" : "empty";
+		if(displayTitle != "empty"){
+			transform.children = [
+				{ tag: "span", class: "attr", html: "displayTitle" },
+				{ tag: "h3", class: "display-title", html: displayTitle }
+			];
+		}
 
 		setUpTransform(null, element);
 		htmlBody += json2html.transform(element, transform);
@@ -72,7 +73,7 @@ function main(cwd, callback) {
 			}
 
 			transform.children.push([
-				{ tag: "h4", class: "attr", html: name },
+				{ tag: "h4", id: name, class: "attr", html: "" },
 				{ tag: "div", html: "${" + name + "}" }
 			]);
 		}

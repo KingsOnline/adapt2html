@@ -10,6 +10,8 @@
     "poster",
     "strapline",
     "small",
+    "arialabel",
+    "_buttons.*",
     "src",
     "id",
     "transcriptLink",
