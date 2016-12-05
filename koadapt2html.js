@@ -71,24 +71,20 @@ function main(cwd, callback) {
 				setUpTransform(name, value);
 				continue;
 			}
+			var className;
 			if(name.includes("_items")){ // if this is an array
 				if(name.includes("title")){
-					transform.children.push([
-						{ tag: "h4", id: name, class: "attr arrayParent", html: "" },
-						{ tag: "div", html: "${" + name + "}" }
-					]);
+					className = "arrayParent";
 				} else {
-					transform.children.push([
-						{ tag: "h4", id: name, class: "attr arrayChild", html: "" },
-						{ tag: "div", html: "${" + name + "}" }
-					]);
+					className = "arrayChild";
 				}
-			} else { //
-				transform.children.push([
-					{ tag: "h4", id: name, class: "attr", html: "" },
-					{ tag: "div", html: "${" + name + "}" }
-				]);
+			} else {
+				className = "val";
 			}
+
+			transform.children.push([
+				{ tag: "div", class: className, html: "${" + name + "}" }
+			]);
 
 		}
 	}
