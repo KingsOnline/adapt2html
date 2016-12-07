@@ -65,15 +65,16 @@ function main(cwd, callback) {
 			var name = elementName ? elementName + "." + key : key;
 			var value = element[key];
 
-			var className;
-			if(name.includes("_items")){ // if this is an array
-				if(name.includes("title")){
-					className = "arrayParent";
+			if(name !=== undefined){
+				if(name.includes("_items")){ // if this is an array
+					if(name.includes("title")){
+						className = "arrayParent";
+					} else {
+						className = "arrayChild";
+					}
 				} else {
-					className = "arrayChild";
+					className = "val";
 				}
-			} else {
-				className = "val";
 			}
 
 			if (shouldBeExcluded(name, key, value)) continue;
