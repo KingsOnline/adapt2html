@@ -89,7 +89,7 @@ function main(cwd, callback) {
 	}
 
 	function shouldBeExcluded(name, key, value) {
-		if(checkImage(name, value)) return true;
+		if(checkImage(name, key)) return true;
 		if (typeof value === "object") {
 			return _.find(exceptions.blacklist, function(i) {
 				var substring = i.substr(0, i.length - 2);
@@ -110,10 +110,10 @@ function main(cwd, callback) {
 			(hasUnderscore && !isException("whitelist"));
 	}
 
-	function checkImage(name, value) {
+	function checkImage(name, key) {
 		console.log("in checkImage()");
-		console.log(value);
-		if(value.includes(".jpg") || value.includes(".png")){
+		console.log(key);
+		if(key.includes(".jpg") || key.includes(".png")){
 			console.log("image");
 			transform.children.push([
 				{ tag: "img", class: className, src: "${" + name + "}" }
