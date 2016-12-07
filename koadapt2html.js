@@ -65,12 +65,6 @@ function main(cwd, callback) {
 			var name = elementName ? elementName + "." + key : key;
 			var value = element[key];
 
-			if (shouldBeExcluded(name, key, value)) continue;
-
-			if (typeof value === "object") {
-				setUpTransform(name, value);
-				continue;
-			}
 			var className;
 			if(name.includes("_items")){ // if this is an array
 				if(name.includes("title")){
@@ -80,6 +74,13 @@ function main(cwd, callback) {
 				}
 			} else {
 				className = "val";
+			}
+
+			if (shouldBeExcluded(name, key, value)) continue;
+
+			if (typeof value === "object") {
+				setUpTransform(name, value);
+				continue;
 			}
 
 			transform.children.push([
