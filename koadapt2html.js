@@ -65,7 +65,7 @@ function main(cwd, callback) {
 			var name = elementName ? elementName + "." + key : key;
 			var value = element[key];
 
-			if(name !=== undefined){
+			if(typeof(name) != "undefined"){
 				if(name.includes("_items")){ // if this is an array
 					if(name.includes("title")){
 						className = "arrayParent";
