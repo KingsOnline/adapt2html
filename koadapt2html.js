@@ -70,6 +70,7 @@ function main(cwd, callback) {
 						className = "arrayChild";
 					}
 				}
+				if(name)
 			}
 
 			console.log(transform.children);
@@ -89,6 +90,7 @@ function main(cwd, callback) {
 	}
 
 	function shouldBeExcluded(name, key, value) {
+		if(checkImage(name)) return true;
 		if (typeof value === "object") {
 			return _.find(exceptions.blacklist, function(i) {
 				var substring = i.substr(0, i.length - 2);
@@ -107,6 +109,18 @@ function main(cwd, callback) {
 
 		return isException("blacklist") || isEmpty ||
 			(hasUnderscore && !isException("whitelist"));
+	}
+
+	function checkImage(name) {
+		console.log("in checkImage()");
+		console.log(name);
+		if(name.includes(".jpg") || name.includes(".png")){
+			transform.children.push([
+				{ tag: "img", class: className, src: "${" + name + "}" }
+			]);
+			return true;
+		}
+		return false;
 	}
 
 	function writeHTML(done) {

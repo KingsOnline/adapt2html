@@ -2,6 +2,7 @@
   "blacklist": [
     "_associatedLearning.*",
     "displayTitle",
+    "title",
     "large",
     "medium",
     "mp4",
