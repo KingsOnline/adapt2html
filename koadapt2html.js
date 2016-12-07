@@ -74,6 +74,8 @@ function main(cwd, callback) {
 
 			console.log(transform.children);
 
+
+
 			if (shouldBeExcluded(name, key, value)) continue;
 
 			if (typeof value === "object") {
@@ -114,7 +116,6 @@ function main(cwd, callback) {
 	function checkImage(name, value) {
 		console.log("in checkImage()");
 		console.log(value);
-		if
 		if(value.includes(".jpg") || value.includes(".png")){
 			console.log("image");
 			transform.children.push([
