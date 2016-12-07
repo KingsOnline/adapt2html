@@ -78,14 +78,14 @@ function main(cwd, callback) {
 				}
 			}
 
+			console.log(transform.children);
+
 			if (shouldBeExcluded(name, key, value)) continue;
 
 			if (typeof value === "object") {
 				setUpTransform(name, value);
 				continue;
 			}
-
-			console.log(transform.children);
 
 			transform.children.push([
 				{ tag: "div", class: className, html: "${" + name + "}" }
