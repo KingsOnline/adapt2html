@@ -74,6 +74,8 @@ function main(cwd, callback) {
 
 			console.log(transform.children);
 
+			if(checkImage(name,value)) continue;
+
 			if (shouldBeExcluded(name, key, value)) continue;
 
 			if (typeof value === "object") {
@@ -89,7 +91,6 @@ function main(cwd, callback) {
 	}
 
 	function shouldBeExcluded(name, key, value) {
-		if(checkImage(name, value)) return true;
 		if (typeof value === "object") {
 			return _.find(exceptions.blacklist, function(i) {
 				var substring = i.substr(0, i.length - 2);
