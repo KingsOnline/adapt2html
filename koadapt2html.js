@@ -64,7 +64,7 @@ function main(cwd, callback) {
 			var key = keys[i];
 			var name = elementName ? elementName + "." + key : key;
 			var value = element[key];
-			var className;
+			var className = "val";
 
 			if(typeof(name) != "undefined"){
 				if(name.includes("_items")){ // if this is an array
@@ -73,8 +73,6 @@ function main(cwd, callback) {
 					} else {
 						className = "arrayChild";
 					}
-				} else {
-					className = "val";
 				}
 			}
 
