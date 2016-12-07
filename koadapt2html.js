@@ -70,7 +70,6 @@ function main(cwd, callback) {
 						className = "arrayChild";
 					}
 				}
-				if(name)
 			}
 
 			console.log(transform.children);
