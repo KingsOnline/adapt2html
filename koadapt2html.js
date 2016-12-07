@@ -64,6 +64,7 @@ function main(cwd, callback) {
 			var key = keys[i];
 			var name = elementName ? elementName + "." + key : key;
 			var value = element[key];
+			var className;
 
 			if(typeof(name) != "undefined"){
 				if(name.includes("_items")){ // if this is an array
@@ -83,6 +84,8 @@ function main(cwd, callback) {
 				setUpTransform(name, value);
 				continue;
 			}
+
+			console.log(transform.children);
 
 			transform.children.push([
 				{ tag: "div", class: className, html: "${" + name + "}" }
