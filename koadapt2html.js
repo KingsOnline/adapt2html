@@ -46,8 +46,6 @@ function main(cwd, callback) {
 	function convertToHTML(element) {
 		var displayTitle = element.displayTitle ? "${displayTitle}" : "empty";
 			transform.children = [
-				{ tag: "h2", class: "border-title", html: "${_component}" },
-				{ tag: "span", class: "attr", html: "displayTitle" },
 				{ tag: "h3", class: "display-title", html: displayTitle }
 			];
 
