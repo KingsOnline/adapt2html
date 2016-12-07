@@ -119,7 +119,7 @@ function main(cwd, callback) {
 		if(value.includes(".jpg") || value.includes(".png")){
 			console.log("image");
 			transform.children.push([
-				{ tag: "img", class: className, src: "${" + name + "}" }
+				{ tag: "img", src: "${" + name + "}" }
 			]);
 			return true;
 		}
