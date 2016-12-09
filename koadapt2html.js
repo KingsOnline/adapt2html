@@ -118,8 +118,9 @@ function main(cwd, callback) {
 		console.log(value);
 		if(value.includes(".jpg") || value.includes(".png")){
 			console.log("image");
+			console.log(name);
 			transform.children.push([
-				{ tag: "img", src: "${../" + name + "}" }
+				{ tag: "img", src: "../../../${" + name + "}" }
 			]);
 			return true;
 		}
