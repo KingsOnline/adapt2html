@@ -9,7 +9,11 @@
 		}
 
 		.logo {
+			float: right;
+		}
 
+		.title {
+			clear: right;
 		}
 
 		.element {
@@ -25,6 +29,10 @@
 
 		.element:nth-child(even) {
 			background-color: #e5f5fa;
+		}
+
+		.element:nth-child(0) {
+			background-color: transparent;
 		}
 
 		h2.border-title {
@@ -70,7 +78,9 @@
 </head>
 <body>
 	<div class="element">
-		<img class="logo" src="kcl-logo.jpg" />
+	<img class="logo" src="kcl-logo.jpg" />
+		<div class="title"> Title goes here </div>
+		
 	</div>
 	{{{body}}}
 </body>
