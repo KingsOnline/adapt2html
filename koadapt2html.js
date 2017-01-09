@@ -1,7 +1,6 @@
 var _ = require("underscore");
 var async = require("async");
 var exceptions = require("./exceptions.json");
-var kclLogo = require("./kcl-logo.jpg");
 var fs = require("fs");
 var json2html = require("node-json2html");
 var mu = require("mu2");
@@ -14,7 +13,11 @@ function main(cwd, callback) {
 
 	console.log("Running koadapt2html...");
 
-	console.log(kclLogo);
+	var logo = document.getElementsByClassName("logo")[0];
+	console.log(logo);
+	logo.style.src = "./kcl-logo.jpg";
+
+
 
 	fs.readdir(cwd, function(err, files) {
 		err ? callback(err) : async.each(files, processFile, callback);
