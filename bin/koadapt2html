@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
 var koadapt2html = require("../koadapt2html.js");
-var files = require("../kcl-logo.jpg")
+var documentExtra = require("../kcl-logo.jpg")
 
-koadapt2html.main(".",  files, function(err) { console.log(err ? err.toString() : "Finished."); });
+koadapt2html.main(".",  documentExtra, function(err) { console.log(err ? err.toString() : "Finished."); });
