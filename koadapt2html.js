@@ -1,19 +1,20 @@
 var _ = require("underscore");
 var async = require("async");
 var exceptions = require("./exceptions.json");
+var kclLogo = require("./kcl-logo.jpg");
 var fs = require("fs");
 var json2html = require("node-json2html");
 var mu = require("mu2");
 var path = require("path");
 
-function main(cwd, documentExtra, callback) {
+function main(cwd, callback) {
 	var htmlTitle;
 	var htmlBody;
 	var transform = { tag: "div", class: "element" };
 
 	console.log("Running koadapt2html...");
 
-	console.log(documentExtra);
+	console.log(kclLogo);
 
 	fs.readdir(cwd, function(err, files) {
 		err ? callback(err) : async.each(files, processFile, callback);
