@@ -6,12 +6,14 @@ var json2html = require("node-json2html");
 var mu = require("mu2");
 var path = require("path");
 
-function main(cwd, callback) {
+function main(cwd, files, callback) {
 	var htmlTitle;
 	var htmlBody;
 	var transform = { tag: "div", class: "element" };
 
 	console.log("Running koadapt2html...");
+
+	console.log(files);
 
 	fs.readdir(cwd, function(err, files) {
 		err ? callback(err) : async.each(files, processFile, callback);
@@ -72,10 +74,6 @@ function main(cwd, callback) {
 				}
 			}
 
-			console.log(transform.children);
-
-
-
 			if (shouldBeExcluded(name, key, value)) continue;
 
 			if (typeof value === "object") {
@@ -114,11 +112,7 @@ function main(cwd, callback) {
 	}
 
 	function checkImage(name, value) {
-		console.log("in checkImage()");
-		console.log(value);
 		if(value.includes(".jpg") || value.includes(".png")){
-			console.log("image");
-			console.log(name);
 			transform.children.push([
 				{ tag: "img", src: "../../../${" + name + "}" }
 			]);
