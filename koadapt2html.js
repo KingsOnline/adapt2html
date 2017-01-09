@@ -13,12 +13,6 @@ function main(cwd, callback) {
 
 	console.log("Running koadapt2html...");
 
-	var logo = document.getElementsByClassName("logo")[0];
-	console.log(logo);
-	logo.style.src = "./kcl-logo.jpg";
-
-
-
 	fs.readdir(cwd, function(err, files) {
 		err ? callback(err) : async.each(files, processFile, callback);
 	});
