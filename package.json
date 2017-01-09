@@ -1,6 +1,6 @@
 {
   "name": "koadapt2html",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "description": "Convert Adapt JSON to HTML",
   "main": "koadapt2html",
   "repository": {
