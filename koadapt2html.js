@@ -123,7 +123,8 @@ function main(cwd, callback) {
 
 	function writeHTML(done) {
 		var template = "";
-		var dir = path.join(cwd, "koadapt2html");
+		var parentDir = ".";
+		var dir = path.join(parentDir, "koadapt2html");
 		var filename = htmlTitle + ".html";
 
 		mu.compileAndRender(path.resolve(__dirname, "template.html"), {
