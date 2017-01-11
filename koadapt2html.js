@@ -19,7 +19,7 @@ function main(cwd, callback) {
 
 	function processFile(file, done) {
 		console.log(path);
-		if (path.extname(file) !== ".json" && path.basename(file) !=== 'components.json') return done();
+		if (path.extname(file) !== ".json" && path.basename(file) !== 'components.json') return done();
 
 		if (file === "exceptions.json") {
 			exceptions = require(path.join(process.cwd(), "exceptions.json"));
