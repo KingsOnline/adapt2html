@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 var koadapt2html = require("../koadapt2html.js");
 
-koadapt2html.main(".", function(err) { console.log(err ? err.toString() : "Finished."); });
+koadapt2html.main("course/en", function(err) { console.log(err ? err.toString() : "Finished."); });
