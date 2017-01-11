@@ -10,6 +10,7 @@ function main(cwd, callback) {
 	var htmlTitle;
 	var htmlBody;
 	var transform = { tag: "div", class: "element" };
+	const PARENTDIR = ".";
 
 	console.log("Running koadapt2html...");
 
@@ -112,9 +113,10 @@ function main(cwd, callback) {
 	}
 
 	function checkImage(name, value) {
+		var location = PARENTDIR + "${" + name + "}"
 		if(value.includes(".jpg") || value.includes(".png")){
 			transform.children.push([
-				{ tag: "img", id: value, src: "../../../${" + name + "}" }
+				{ tag: "img", id: value, src: location }
 			]);
 			return true;
 		}
@@ -123,8 +125,7 @@ function main(cwd, callback) {
 
 	function writeHTML(done) {
 		var template = "";
-		var parentDir = ".";
-		var dir = path.join(parentDir, "koadapt2html");
+		var dir = path.join(PARENTDIR, "koadapt2html");
 		var filename = htmlTitle + ".html";
 
 		mu.compileAndRender(path.resolve(__dirname, "template.html"), {
