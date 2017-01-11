@@ -8,6 +8,14 @@
 			font-family: sans-serif;
 		}
 
+		.logo {
+			float: right;
+		}
+
+		.title {
+			clear: right;
+		}
+
 		.element {
 			max-width: 900px;
 			padding: 10px;
@@ -21,6 +29,10 @@
 
 		.element:nth-child(even) {
 			background-color: #e5f5fa;
+		}
+
+		.element:nth-child(0) {
+			background-color: transparent;
 		}
 
 		h2.border-title {
@@ -50,6 +62,10 @@
 			margin-top: 20px;
 		}
 
+		img {
+			max-height: 300px;
+			max-width: 300px;
+		}
 
 		.attr {
 			margin: 10px 0 0;
@@ -61,6 +77,11 @@
 	</style>
 </head>
 <body>
+	<div class="element">
+	<img class="logo" src="kcl-logo.jpg" />
+		<div class="title"> Title goes here </div>
+		
+	</div>
 	{{{body}}}
 </body>
 </html>
