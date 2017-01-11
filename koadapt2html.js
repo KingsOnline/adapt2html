@@ -120,7 +120,7 @@ function main(cwd, callback) {
 			console.log("image");
 			console.log(name);
 			transform.children.push([
-				{ tag: "img", src: "../../../${" + name + "}" }
+				{ tag: "img", id: value, src: "../../../${" + name + "}" }
 			]);
 			return true;
 		}
