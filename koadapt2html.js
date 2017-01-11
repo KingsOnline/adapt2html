@@ -113,7 +113,7 @@ function main(cwd, callback) {
 	}
 
 	function checkImage(name, value) {
-		var location = PARENTDIR + "${" + name + "}"
+		var location = "../${" + name + "}"
 		if(value.includes(".jpg") || value.includes(".png")){
 			transform.children.push([
 				{ tag: "img", id: value, src: location }
